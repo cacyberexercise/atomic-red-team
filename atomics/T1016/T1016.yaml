@@ -85,7 +85,7 @@ atomic_tests:
     portfile_url:
       description: URL to top-128.txt
       type: url
-      default: https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1016/src/top-128.txt
+      default: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1016/src/top-128.txt
     port_file:
       description: The path to a text file containing ports to be scanned, one port per line. The default list uses the top 128 ports as defined by Nmap.
       type: path
@@ -150,7 +150,7 @@ atomic_tests:
       if (Test-Path "PathToAtomicsFolder\..\ExternalPayloads\AdFind.exe") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "PathToAtomicsFolder\..\ExternalPayloads\AdFind.exe") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest -Uri "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1087.002/bin/AdFind.exe" -OutFile "PathToAtomicsFolder\..\ExternalPayloads\AdFind.exe"
+      Invoke-WebRequest -Uri "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1087.002/bin/AdFind.exe" -OutFile "PathToAtomicsFolder\..\ExternalPayloads\AdFind.exe"
   executor:
     command: |
       "PathToAtomicsFolder\..\ExternalPayloads\AdFind.exe" -f (objectcategory=subnet) #{optional_args}
@@ -174,7 +174,7 @@ atomic_tests:
       if (Test-Path "#{recon_commands}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{recon_commands}") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1016/src/qakbot.bat" -OutFile "#{recon_commands}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1016/src/qakbot.bat" -OutFile "#{recon_commands}"
   executor:
     command: |
       "#{recon_commands}"

@@ -5,7 +5,7 @@ atomic_tests:
   auto_generated_guid: 8bebc690-18c7-4549-bc98-210f7019efff
   description: |
     This Test uses a VBA macro to create and execute #{jse_path} with cscript.exe. Upon execution, the .jse file launches wscript.exe.
-    Execution is handled by [Invoke-MalDoc](https://github.com/redcanaryco/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1) to load and execute VBA code into Excel or Word documents.
+    Execution is handled by [Invoke-MalDoc](https://rangegogs.cnd.ca.gov/Range/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1) to load and execute VBA code into Excel or Word documents.
     This is a known execution chain observed by the OSTap downloader commonly used in TrickBot campaigns.
     References:
       https://www.computerweekly.com/news/252470091/TrickBot-Trojan-switches-to-stealthy-Ostap-downloader
@@ -69,7 +69,7 @@ atomic_tests:
   auto_generated_guid: 0330a5d2-a45a-4272-a9ee-e364411c4b18
   description: |
     This Test uses a VBA macro to execute cmd with flags observed in recent maldoc and 2nd stage downloaders. Upon execution, CMD will be launched.
-    Execution is handled by [Invoke-MalDoc](https://github.com/redcanaryco/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1) to load and execute VBA code into Excel or Word documents.
+    Execution is handled by [Invoke-MalDoc](https://rangegogs.cnd.ca.gov/Range/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1) to load and execute VBA code into Excel or Word documents.
   supported_platforms:
   - windows
   input_arguments:
@@ -101,7 +101,7 @@ atomic_tests:
   auto_generated_guid: add560ef-20d6-4011-a937-2c340f930911
   description: |
     Malicious JavaScript executing CMD which spawns wscript.exe //e:jscript
-    Execution is handled by [Invoke-MalDoc](https://github.com/redcanaryco/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1) to load and execute VBA code into Excel or Word documents.
+    Execution is handled by [Invoke-MalDoc](https://rangegogs.cnd.ca.gov/Range/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1) to load and execute VBA code into Excel or Word documents.
   supported_platforms:
   - windows
   input_arguments:

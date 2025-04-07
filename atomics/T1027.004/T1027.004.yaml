@@ -25,7 +25,7 @@ atomic_tests:
       if (Test-Path "#{input_file}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{input_file}") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/calc.cs" -OutFile "#{input_file}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1027.004/src/calc.cs" -OutFile "#{input_file}"
   executor:
     command: |
       C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /out:#{output_file} "#{input_file}"
@@ -53,7 +53,7 @@ atomic_tests:
     prereq_command: |
       if (Test-Path "#{input_file}") {exit 0} else {exit 1}
     get_prereq_command: |
-      Invoke-WebRequest https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/bin/T1027.004_DynamicCompile.exe -OutFile "#{input_file}"
+      Invoke-WebRequest https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1027.004/bin/T1027.004_DynamicCompile.exe -OutFile "#{input_file}"
   executor:
     command: |
       Invoke-Expression "#{input_file}"
@@ -78,7 +78,7 @@ atomic_tests:
     prereq_command: |
       if [ -e  #{input_file} ]; then exit 0; else exit 1; fi
     get_prereq_command: |
-      wget https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.c -O "#{input_file}"
+      wget https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.c -O "#{input_file}"
   executor:
     command: |
       gcc #{input_file} && ./a.out
@@ -103,7 +103,7 @@ atomic_tests:
     prereq_command: |
       if [ -e  #{input_file} ]; then exit 0; else exit 1; fi
     get_prereq_command: |
-      wget https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.cc -O #{input_file}
+      wget https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.cc -O #{input_file}
   executor:
     command: |
       g++ #{input_file} && ./a.out
@@ -128,7 +128,7 @@ atomic_tests:
     prereq_command: |
       if [ -e  #{input_file} ]; then exit 0; else exit 1; fi
     get_prereq_command: |
-      wget https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.go -O #{input_file}
+      wget https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.go -O #{input_file}
   executor:
     command: |
       go run #{input_file}

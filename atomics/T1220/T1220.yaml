@@ -31,14 +31,14 @@ atomic_tests:
       if (Test-Path "#{xmlfile}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{xmlfile}") -ErrorAction Ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1220/src/msxslxmlfile.xml" -OutFile "#{xmlfile}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1220/src/msxslxmlfile.xml" -OutFile "#{xmlfile}"
   - description: |
       XSL file must exist on disk at specified location (#{xslfile})
     prereq_command: |
       if (Test-Path "#{xslfile}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{xslfile}") -ErrorAction Ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1220/src/msxslscript.xsl" -OutFile "#{xslfile}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1220/src/msxslscript.xsl" -OutFile "#{xslfile}"
   - description: |
       msxsl.exe must exist on disk at specified location (#{msxsl_exe})
     prereq_command: |
@@ -111,7 +111,7 @@ atomic_tests:
       if (Test-Path "#{local_xsl_file}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{local_xsl_file}") -ErrorAction Ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1220/src/wmicscript.xsl" -OutFile "#{local_xsl_file}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1220/src/wmicscript.xsl" -OutFile "#{local_xsl_file}"
   executor:
     command: |
       wmic #{wmic_command} /FORMAT:"#{local_xsl_file}"

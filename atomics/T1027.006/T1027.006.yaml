@@ -5,7 +5,7 @@ atomic_tests:
 - name: HTML Smuggling Remote Payload
   auto_generated_guid: 30cbeda4-08d9-42f1-8685-197fad677734
   description: |
-    The HTML file will download an ISO file from [T1553.005](https://github.com/redcanaryco/atomic-red-team/blob/d0dad62dbcae9c60c519368e82c196a3db577055/atomics/T1553.005/bin/FeelTheBurn.iso) without user interaction. 
+    The HTML file will download an ISO file from [T1553.005](https://rangegogs.cnd.ca.gov/Range/atomic-red-team/blob/d0dad62dbcae9c60c519368e82c196a3db577055/atomics/T1553.005/bin/FeelTheBurn.iso) without user interaction. 
     The HTML file is based off of the work from [Stan Hegt](https://outflank.nl/blog/2018/08/14/html-smuggling-explained/)
   supported_platforms:
   - windows
@@ -16,7 +16,7 @@ atomic_tests:
       if (Test-Path "PathToAtomicsFolder\T1027.006\bin\T1027_006_Remote.html") { exit 0} else { exit 1}
     get_prereq_command: |
       New-Item -Type Directory "PathToAtomicsFolder\T1027.006\bin\" -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.006/bin/T1027_006_Remote.html" -OutFile "PathToAtomicsFolder\T1027.006\bin\T1027_006_Remote.html"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1027.006/bin/T1027_006_Remote.html" -OutFile "PathToAtomicsFolder\T1027.006\bin\T1027_006_Remote.html"
   executor:
     command: |
       & "PathToAtomicsFolder\T1027.006\bin\T1027_006_remote.html"

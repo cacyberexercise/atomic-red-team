@@ -4614,7 +4614,7 @@ defense-evasion:
       - source_name: T1562.002_redcanaryco
         description: redcanaryco. (2021, September 3). T1562.002 - Disable Windows
           Event Logging. Retrieved September 13, 2021.
-        url: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.002/T1562.002.md
+        url: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/blob/master/atomics/T1562.002/T1562.002.md
       - source_name: Advanced_sec_audit_policy_settings
         description: Simpson, D. et al. (2017, April 19). Advanced security audit
           policy settings. Retrieved September 14, 2021.
@@ -15509,7 +15509,7 @@ privilege-escalation:
       - source_name: Red Canary - Atomic Red Team
         description: 'Red Canary - Atomic Red Team. (n.d.). T1053.005 - Scheduled
           Task/Job: Scheduled Task. Retrieved June 19, 2024.'
-        url: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
+        url: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
       - source_name: TechNet Autoruns
         description: Russinovich, M. (2016, January 4). Autoruns for Windows v13.51.
           Retrieved June 6, 2016.
@@ -24522,7 +24522,7 @@ execution:
       - source_name: Red Canary - Atomic Red Team
         description: 'Red Canary - Atomic Red Team. (n.d.). T1053.005 - Scheduled
           Task/Job: Scheduled Task. Retrieved June 19, 2024.'
-        url: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
+        url: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
       - source_name: TechNet Autoruns
         description: Russinovich, M. (2016, January 4). Autoruns for Windows v13.51.
           Retrieved June 6, 2016.
@@ -27314,7 +27314,7 @@ persistence:
       - source_name: Red Canary - Atomic Red Team
         description: 'Red Canary - Atomic Red Team. (n.d.). T1053.005 - Scheduled
           Task/Job: Scheduled Task. Retrieved June 19, 2024.'
-        url: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
+        url: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/blob/master/atomics/T1053.005/T1053.005.md
       - source_name: TechNet Autoruns
         description: Russinovich, M. (2016, January 4). Autoruns for Windows v13.51.
           Retrieved June 6, 2016.
@@ -44660,7 +44660,7 @@ credential-access:
       - source_name: atomic-red proc file system
         description: 'Atomic Red Team. (2023, November). T1003.007 - OS Credential
           Dumping: Proc Filesystem. Retrieved March 28, 2024.'
-        url: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.007/T1003.007.md
+        url: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/blob/master/atomics/T1003.007/T1003.007.md
       - source_name: baeldung Linux proc map 2022
         description: baeldung. (2022, April 8). Understanding the Linux /proc/id/maps
           File. Retrieved March 31, 2023.

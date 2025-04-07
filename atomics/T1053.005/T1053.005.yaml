@@ -146,7 +146,7 @@ atomic_tests:
       if (Test-Path "#{xml_path}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{xml_path}") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1053.005/src/T1053_005_WMI.xml" -OutFile "#{xml_path}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1053.005/src/T1053_005_WMI.xml" -OutFile "#{xml_path}"
   executor:
     name: powershell
     elevation_required: true
@@ -198,7 +198,7 @@ atomic_tests:
       if (Test-Path "#{xml_path}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{xml_path}") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1053.005/src/T1053_05_SCTASK_HIDDEN_ATTRIB.xml" -OutFile "#{xml_path}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1053.005/src/T1053_05_SCTASK_HIDDEN_ATTRIB.xml" -OutFile "#{xml_path}"
   executor:
     name: powershell
     elevation_required: true

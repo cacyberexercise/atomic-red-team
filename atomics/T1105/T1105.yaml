@@ -465,7 +465,7 @@ atomic_tests:
     file_download:
       description: File to download
       type: string
-      default: https://github.com/redcanaryco/atomic-red-team/raw/058b5c2423c4a6e9e226f4e5ffa1a6fd9bb1a90e/atomics/T1218.010/bin/AllTheThingsx64.dll
+      default: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/058b5c2423c4a6e9e226f4e5ffa1a6fd9bb1a90e/atomics/T1218.010/bin/AllTheThingsx64.dll
     curl_path:
       description: path to curl.exe
       type: path
@@ -567,7 +567,7 @@ atomic_tests:
       if (Test-Path "#{Path_to_file}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{Path_to_file}") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1105/src/T1105.bat" -OutFile "#{Path_to_file}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1105/src/T1105.bat" -OutFile "#{Path_to_file}"
   executor:
     command: |
       "#{Path_to_file}" 1>NUL 
@@ -681,7 +681,7 @@ atomic_tests:
       if (Test-Path "#{replace_cab}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{replace_cab}") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1105/src/redcanary.cab" -OutFile "#{replace_cab}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1105/src/redcanary.cab" -OutFile "#{replace_cab}"
   executor:
     command: |
       del %TEMP%\redcanary.cab >nul 2>&1
@@ -751,7 +751,7 @@ atomic_tests:
       if (Test-Path "#{vbscript_file}") {exit 0} else {exit 1}
     get_prereq_command: |
       New-Item -Type Directory (split-path "#{vbscript_file}") -ErrorAction ignore | Out-Null
-      Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1105/src/T1105-download-file.vbs" -OutFile "#{vbscript_file}"
+      Invoke-WebRequest "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1105/src/T1105-download-file.vbs" -OutFile "#{vbscript_file}"
   executor:
     command: |
       wscript.exe "#{vbscript_file}"
@@ -905,7 +905,7 @@ atomic_tests:
     remote_url:
       description: URL of the C2 Server from where file/s need to be downloaded
       type: url
-      default: https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1105/src/T1105.zip
+      default: https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1105/src/T1105.zip
     local_file_path:
       description: The local file path along with filename to where the file needs to be downloaded and placed.
       type: path

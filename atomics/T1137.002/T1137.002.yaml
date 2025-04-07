@@ -24,8 +24,8 @@ atomic_tests:
      if ((Test-Path "PathToAtomicsFolder\T1137.002\bin\officetest_x64.dll") -and (Test-Path "PathToAtomicsFolder\T1137.002\bin\officetest_x86.dll")) {exit 0} else {exit 1}
     get_prereq_command: |-
       New-Item -Type Directory "PathToAtomicsFolder\T1137.002\bin\" -Force | Out-Null
-      Invoke-Webrequest -Uri "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1137.002/bin/officetest_x64.dll" -UseBasicParsing -OutFile "PathToAtomicsFolder\T1137.002\bin\officetest_x64.dll"
-      Invoke-Webrequest -Uri "htps://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1137.002/bin/officetest_x86.dll" -UseBasicParsing -OutFile "PathToAtomicsFolder\T1137.002\bin\officetest_x86.dll"
+      Invoke-Webrequest -Uri "https://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1137.002/bin/officetest_x64.dll" -UseBasicParsing -OutFile "PathToAtomicsFolder\T1137.002\bin\officetest_x64.dll"
+      Invoke-Webrequest -Uri "htps://rangegogs.cnd.ca.gov/Range/atomic-red-team/raw/master/atomics/T1137.002/bin/officetest_x86.dll" -UseBasicParsing -OutFile "PathToAtomicsFolder\T1137.002\bin\officetest_x86.dll"
   executor:
     name: powershell
     command: |
