@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+  workflows: write
+
 jobs:
   replace-urls:
     runs-on: ubuntu-latest
@@ -14,10 +18,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Replace GitHub base URLs
+      - name: Replace GitHub base URLs (excluding .github/)
         run: |
-          echo "🔁 Replacing github.com/redcanaryco with rangegogs.cnd.ca.gov/Range..."
-          find . -type f -not -path "./.git/*" \( -name "*.md" -o -name "*.yml" -o -name "*.yaml" -o -name "*.txt" -o -name "*.sh" -o -name "*.json" \) | while read file; do
+          echo "🔁 Replacing github.com/redcanaryco with rangegogs.cnd.ca.gov/Range (excluding .github/)..."
+          find . -type f \
+            -not -path "./.git/*" \
+            -not -path "./.github/*" \
+            \( -name "*.md" -o -name "*.yml" -o -name "*.yaml" -o -name "*.txt" -o -name "*.sh" -o -name "*.json" \) | while read file; do
             sed -i 's|github.com/redcanaryco|rangegogs.cnd.ca.gov/Range|g' "$file"
           done
 
@@ -30,6 +37,6 @@ jobs:
             echo "✅ No changes to commit."
           else
             git add .
-            git commit -m "🔄 Replaced GitHub base URLs with internal GOGS base"
+            git commit -m "🔄 Replaced GitHub base URLs with internal GOGS base (excluding .github/)"
             git push
           fi
