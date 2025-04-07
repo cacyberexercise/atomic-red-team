@@ -1,0 +1,35 @@
+name: Replace GitHub URLs with Internal GOGS URLs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  replace-urls:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Replace GitHub base URLs
+        run: |
+          echo "🔁 Replacing github.com/redcanaryco with rangegogs.cnd.ca.gov/Range..."
+          find . -type f -not -path "./.git/*" \( -name "*.md" -o -name "*.yml" -o -name "*.yaml" -o -name "*.txt" -o -name "*.sh" -o -name "*.json" \) | while read file; do
+            sed -i 's|github.com/redcanaryco|rangegogs.cnd.ca.gov/Range|g' "$file"
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "✅ No changes to commit."
+          else
+            git add .
+            git commit -m "🔄 Replaced GitHub base URLs with internal GOGS base"
+            git push
+          fi
